@@ -1,0 +1,6 @@
+{
+    "labels":[
+        {"name":"Product Creator","description":"This label indicates a product creator.","node_id":"LA_kwDOPCsnNs8AAAACOJqblA"},
+        {"name":"Product Creator In Progress","description":"This label indicates that the product creator is currently working on the task.","node_id":"LA_kwDOPCsnNs8AAAACOJqxDg"}
+    ]
+}
