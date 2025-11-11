@@ -1,0 +1,14 @@
+{
+  "labels": [
+    {
+      "name": "bug",
+      "description": "Something isn't working",
+      "node_id": "LA_kwDOPCsnNs8AAAACD3pRJA"
+    },
+    {
+      "name": "Product Creator",
+      "description": "Creator of the product",
+      "node_id": "LA_kwDOPCsnNs8AAAACOJqblA"
+    }
+  ]
+}
