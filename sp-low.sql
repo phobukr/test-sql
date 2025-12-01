@@ -1,6 +1,7 @@
-CREATE PROCEDURE proc_low (@proj_id int, @success_flag int)
+CREATE PROCEDURE proc_low (@operation_id varchar(200), @success_flag int)
 AS 
 declare @log_id int
+declare @proj_id int, @orig_proj_id int
 declare @rundate datetime
 declare @step1 int
 declare @event_message varchar(500)
@@ -9,6 +10,9 @@ set @rundate=getDate()
 begin
 set @success_flag=0
 	begin try
+
+        select @proj_id = max(main_entity_id), @orig_proj_id = max(source_entity_id) from workflow_actions isa
+        where uz_inspire_dbo.dates(load_start_date)= uz_inspire_dbo.dates(GETDATE()) and Operation_id = @operation_id;
 
 		begin transaction logme;
 			exec inspire.create_log_entry  'spir_refresh_impacted_lines', @rundate, null, 'REFR_IMPACT_A', 'STARTED', 'MESSAGE', @proj_id ,@log_id output

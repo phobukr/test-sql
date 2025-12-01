@@ -28,3 +28,11 @@ CREATE TABLE table_refresh_data (
 	created_by varchar(20) COLLATE Latin1_General_CI_AS NULL,
 	processed varchar(1) COLLATE Latin1_General_CI_AS NULL
 );
+
+CREATE TABLE dbo.workflow_actions (
+    workflow_action_id     INT            NOT NULL,
+    main_entity_id         INT            NOT NULL,
+    source_entity_id       INT            NULL,
+    Operation_id           VARCHAR(200)   NOT NULL,
+    load_start_date        DATETIME       NULL,
+    CONSTRAINT workflow_actions_pk PRIMARY KEY (workflow_action_id);
